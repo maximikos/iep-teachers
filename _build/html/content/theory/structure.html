@@ -1,0 +1,1324 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="100x100" href="../../_static/logo/iep_favicon.ico" type="image/x-icon">
+    <title>Structure &#8212; IEP  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=80d638d1" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/theory/structure';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/maximikos/iep-novice/main/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'novice';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Uncertainty" href="uncertainty.html" />
+    <link rel="prev" title="LCA" href="methods/lca.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nemora_logo_small.png" class="logo__image only-light" alt="IEP  documentation - Home"/>
+    <script>document.write(`<img src="../../_static/nemora_logo_small.png" class="logo__image only-dark" alt="IEP  documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../insights/index.html">
+                        Insights
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../resources/index.html">
+                        Resources
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contributing/index.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contact/contact.html">
+                        Contact
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../about/index.html">
+                        About
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/maximikos" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../insights/index.html">
+                        Insights
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../resources/index.html">
+                        Resources
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contributing/index.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contact/contact.html">
+                        Contact
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../about/index.html">
+                        About
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/maximikos" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="history/index.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/index.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methods/index.html">Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uncertainty.html">Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_traversal.html">Graph traversal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static_and_stochastic_lca.html">Normal Static LCA</a></li>
+
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Theory</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Structure</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>HELP WANTED</strong> <br />
+You can help update and improve the content on this page. <br />
+Please start by reading the <a class="reference internal" href="#../contributing/contributing.md"><span class="xref myst">guide to contributing to the Brightway documentation.</span></a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>NEEDS WORK</strong> <br />
+This page is not yet complete. <br />
+It has been transfered over from the legacy documentation.</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h1>
+<section id="brightway-components">
+<span id="id1"></span><h2>Brightway Components<a class="headerlink" href="#brightway-components" title="Link to this heading">#</a></h2>
+<p>Brightway is split into several main packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway25">Brightway25</a> is the
+umbrella package, as well as documentation. When installing this
+package, it will pull as dependencies the following packages:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway2-data">Brightway2-data</a>
+handles storing and searching all data sources (databases, LCIA methods,
+etc.).</p></li>
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway2-calc">Brightway2-calc</a> does
+LCA calculations.</p></li>
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway2-io">Brightway2-io</a> tools
+for the import, export, and management of inventory databases and impact
+assessment methods. LCA calculations.</p></li>
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway2-analyzer">Brightway2-analyzer</a>
+analyzes input data like databases and methods, as well as the result of
+LCA calculations.</p></li>
+<li><p><a class="reference external" href="https://github.com/brightway-lca/brightway2-parameters">Brightway2-parameters</a>
+Library for storing, validating, and calculating with parameters.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Link to this heading">#</a></h2>
+<p>Data in Brightway2 is structured in a hierarchy. At the top level, we
+have projects. A project is self-contained, with its own copy of data,
+LCIA methods, calculations, assumptions, and any other data you need.
+Each project is completely independent of other projects.Projects are
+saved as subdirectories in the file system.</p>
+<p><img alt="image" src="../../_images/org-scheme.png" /></p>
+<p>Inside a project we have a number of objects that store data. The most
+common data objects are inventory <em>databases</em> and impact assessment
+<em>methods</em>. However, non-LCA data can also be included. For example, a
+set of vehicle registrations and lifetimes could also be stored in a
+project, and used to generate fleet-based scenarios for sustainability
+assessment of mobility services.</p>
+<p>Project are created in a suitable location for your operating system
+with the help of the <a class="reference external" href="https://github.com/ActiveState/appdirs">appdirs</a>
+library.</p>
+<p>Projects can be easily created, copied, manipulated, or deleted. See the
+<a class="reference external" href="https://github.com/brightway-lca/brightway2/blob/master/notebooks/Projects.ipynb">projects example
+notebook</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Brightway2 uses <a class="reference external" href="https://github.com/abarnert/fatomic">atomic file
+writes</a> to prevent data corruption,
+but <a class="reference external" href="http://danluu.com/file-consistency/">files are hard</a>; you should
+make regular backups using the <code class="docutils literal notranslate"><span class="pre">backup-data-directory</span></code> function.</p>
+</div>
+</section>
+<section id="inventory-databases">
+<h2>Inventory Databases<a class="headerlink" href="#inventory-databases" title="Link to this heading">#</a></h2>
+<p>In Brightway2, a <em>database</em> is the object used to organize a set of
+nodes and edges in a life cycle inventory graph of the industrial supply
+chain and natural world. For example, a specific version of ecoinvent
+could be a database, but so would a set of biosphere flows, as biosphere
+flows are also nodes in our inventory graph. Databases can be big, like
+ecoinvent, or as small as a single dataset. You can have as many
+databases as you like, and databases can have links into other
+databases. You can also have databases that each depend on each other.</p>
+<p>SimaPro differentiates between what it calls <em>projects</em> and <em>libraries</em>,
+but both would be a <em>database</em> in Brightway2.</p>
+<p>Databases can be easily created, copied, modified, iterated over,
+searched, and delted. See the <a class="reference external" href="https://github.com/brightway-lca/brightway2/blob/master/notebooks/Databases.ipynb">databases example
+notebook</a>.</p>
+</section>
+<section id="activities-and-exchanges">
+<h2>Activities and Exchanges<a class="headerlink" href="#activities-and-exchanges" title="Link to this heading">#</a></h2>
+<p>In the database, nodes are called <em>activities</em>, and include transforming
+and market activities, but also products and biosphere flows. Edges are
+called <em>exchanges</em>, and describe a link between two nodes. An exchange
+could describe the input of a product to a transforming activity, or an
+emission of a biosphere flow by an activity, or the name and amount of a
+product produced by an activity.</p>
+<section id="activity-data-format">
+<h3>Activity data format<a class="headerlink" href="#activity-data-format" title="Link to this heading">#</a></h3>
+<p>A database consists of inventory datasets, and inventory datasets are
+text documents, human-readable data that you can manipulate manually in
+a text editor, or change en masse programmatically. Because they can be
+exported as text, and in a format that is accessible to almost every
+computer language (<a class="reference external" href="http://www.json.org/">JSON</a>), activity datasets can
+be easily exported and used by other programs.</p>
+<p>Inventory datasets have a very flexible and free text form; even an
+empty dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">{}</span></code>) is a valid LCI dataset in Brightway2.
+However, some fields are suggested for common use. Note that you can
+always add extra fields as needed by your application. Here is a
+selection from an example dataset from the US LCI:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="s1">&#39;categories&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Wood Product Manufacturing&#39;</span><span class="p">,</span> <span class="s1">&#39;Softwood Veneer and Plywood Mnf.&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;RNA&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Green veneer, at plywood plant, US PNW&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;process&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="s1">&#39;kilogram&#39;</span><span class="p">}</span>
+ <span class="s1">&#39;exchanges&#39;</span><span class="p">:</span> <span class="p">[{</span>
+   <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+   <span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+   <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;US LCI&#39;</span><span class="p">,</span> <span class="s1">&#39;6ddb4cc00f9e42aa48515248256c31dc&#39;</span><span class="p">),</span>
+   <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;production&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;uncertainty type&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mf">7.349999999999999e-06</span><span class="p">,</span>
+   <span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+   <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+   <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="s1">&#39;51447e58e03a40a2bbd9abf45214b7d3&#39;</span><span class="p">),</span>
+   <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;biosphere&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;uncertainty type&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The document structure is:</p>
+<ul class="simple">
+<li><p><em>name</em> (string): Name of this activity.</p></li>
+<li><p><em>type</em> (string): If this is <code class="docutils literal notranslate"><span class="pre">&quot;process&quot;</span></code>, or omitted completely,
+Brightway2 will treat this as a inventory process with inputs and
+output(s). If you want to store additional information in a Database
+outside of the list of processes, specify a custom type here. For
+example, the list of biosphere flows is also an inventory database,
+but as these are flows, not processes, they have the type
+<code class="docutils literal notranslate"><span class="pre">&quot;emission&quot;</span></code>. Similarly, if you wanted to separate processes and
+products, you could create database entries for the products, with
+the type <code class="docutils literal notranslate"><span class="pre">&quot;product&quot;</span></code>.</p></li>
+<li><p><em>categories</em> (list of strings, optional): A list of categories and
+subcategories. No length limits.</p></li>
+<li><p><em>location</em> (string, optional): A location identifier. Default is
+<em>GLO</em>, but this can be changed in the
+<code class="docutils literal notranslate"><span class="pre">user-preferences</span></code>.</p></li>
+<li><p><em>unit</em> (string): Unit of this activity. <a class="reference external" href="https://github.com/brightway-lca/brightway2-io/blob/master/bw2io/units.py">Units are
+normalized</a>
+when written to disk.</p></li>
+<li><p><em>exchanges</em> (list): A list of activity inputs and outputs, with its own schema.</p>
+<ul>
+<li><p><em>input</em> (database name, database code): The technological
+activity that is linked to, e.g.
+<code class="docutils literal notranslate"><span class="pre">(&quot;my</span> <span class="pre">new</span> <span class="pre">database&quot;,</span> <span class="pre">&quot;production</span> <span class="pre">of</span> <span class="pre">ice</span> <span class="pre">cream&quot;)</span></code> or
+<code class="docutils literal notranslate"><span class="pre">('biosphere',</span> <span class="pre">'51447e58e03a40a2bbd9abf45214b7d3')</span></code>. See
+also <code class="docutils literal notranslate"><span class="pre">dataset-codes</span></code>.</p></li>
+<li><p><em>type</em> (string): One of <code class="docutils literal notranslate"><span class="pre">production</span></code>, <code class="docutils literal notranslate"><span class="pre">technosphere</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">biosphere</span></code>. See <code class="docutils literal notranslate"><span class="pre">exchanges</span></code>.</p></li>
+<li><p><em>amount</em> (float): Amount of this exchange.</p></li>
+<li><p><em>uncertainty type</em> (integer): Integer code for uncertainty
+distribution of this exchange, see
+<code class="docutils literal notranslate"><span class="pre">uncertainty-type</span></code> for more
+information. There can be other uncertainty fields as well.</p></li>
+<li><p><em>comment</em> (string, optional): A comment on this exchange.
+Used to store pedigree matrix data in ecoinvent v2.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="uniquely-identifying-activities">
+<h2>Uniquely identifying activities<a class="headerlink" href="#uniquely-identifying-activities" title="Link to this heading">#</a></h2>
+<p>Linking activity datasets within and between databases requires a way to
+uniquely identify each dataset - Brightway2 calls this unique identifier
+a code. A code can be a number, like <code class="docutils literal notranslate"><span class="pre">1</span></code>, or a string of numbers and
+letters, like <code class="docutils literal notranslate"><span class="pre">swiss</span> <span class="pre">ch33se</span></code>. When you create datasets manually, you
+will need to assign each dataset a code. When you import a database, the
+codes will be automatically generated for you.</p>
+<section id="activity-hashes">
+<h3>Activity hashes<a class="headerlink" href="#activity-hashes" title="Link to this heading">#</a></h3>
+<p>When you import an <em>ecospold</em> or <em>SimaPro</em> dataset, the data format does
+not provide a way to uniquely identify each dataset. Brightway2 will
+generate codes that look like a bunch of nonsense, e.g.:
+<code class="docutils literal notranslate"><span class="pre">6d336c64e3a0ff08dee166a1dfdf0946</span></code>. In this case, Brightway2 identifies
+an activity or flow with the <a class="reference external" href="http://en.wikipedia.org/wiki/MD5">MD5</a>
+hash of a few attributes: For ecoinvent 2, the <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>,
+<code class="docutils literal notranslate"><span class="pre">unit</span></code>, and <code class="docutils literal notranslate"><span class="pre">categories</span></code>. For ecoinvent 3, the <code class="docutils literal notranslate"><span class="pre">activity</span></code> and
+<code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">product</span></code> names.</p>
+</section>
+<section id="activities-must-be-uniquely-identified">
+<h3>Activities must be uniquely identified<a class="headerlink" href="#activities-must-be-uniquely-identified" title="Link to this heading">#</a></h3>
+<p>Activities are identified by their database name and a unique <code class="docutils literal notranslate"><span class="pre">code</span></code>. A
+code is a string of letters and numbers that uniquely identifies an
+activity within the database. Codes can be written by humans, e.g.
+<code class="docutils literal notranslate"><span class="pre">&quot;Chris's</span> <span class="pre">first</span> <span class="pre">pony&quot;</span></code>, or generated by by the computer using an
+algorithm.</p>
+<p>Activities do not have very many required fields; aside from <code class="docutils literal notranslate"><span class="pre">database</span></code>
+and <code class="docutils literal notranslate"><span class="pre">code</span></code>, the only other required field is <code class="docutils literal notranslate"><span class="pre">name</span></code>, but most activities
+will have a <code class="docutils literal notranslate"><span class="pre">location</span></code> and <code class="docutils literal notranslate"><span class="pre">unit</span></code> as well. If no <code class="docutils literal notranslate"><span class="pre">type</span></code> is specified for
+an activity, then the activity is assumed to be a <code class="docutils literal notranslate"><span class="pre">process</span></code>. Other types
+include <code class="docutils literal notranslate"><span class="pre">product</span></code> and <code class="docutils literal notranslate"><span class="pre">biosphere</span></code> for biosphere flows. Activity <code class="docutils literal notranslate"><span class="pre">type</span></code>
+is used to determine whether an activity should be placed in the
+biosphere or technosphere matrices during LCA calculations.</p>
+<p>Exchanges are links between two activities of any type. Exchanges have
+an <code class="docutils literal notranslate"><span class="pre">input</span></code> and an <code class="docutils literal notranslate"><span class="pre">output</span></code>: <code class="docutils literal notranslate"><span class="pre">input</span></code> is the activity being consumed or
+produced, and <code class="docutils literal notranslate"><span class="pre">output</span></code> is the consumer or producer. Exchanges should
+also have an <code class="docutils literal notranslate"><span class="pre">amount</span></code> and a <code class="docutils literal notranslate"><span class="pre">type</span></code>. Common types include <code class="docutils literal notranslate"><span class="pre">technosphere</span></code>,
+<code class="docutils literal notranslate"><span class="pre">biosphere</span></code>, and <code class="docutils literal notranslate"><span class="pre">production</span></code>. Multiple exchanges between two activities
+are allowed, and will be added together during LCA calculations.</p>
+<p>Many activities have a reference product, which is an exchange of type
+<code class="docutils literal notranslate"><span class="pre">production</span></code> where the <code class="docutils literal notranslate"><span class="pre">input</span></code> is the same as the <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
+<p>Brightway2 allows multioutput processes; you are responsible for making
+sure the final system make mathematical sense (see <a class="reference external" href="http://chris.mutel.org/multioutput.html">multioutput
+processes in LCA</a>).</p>
+</section>
+<section id="exchange-data-format">
+<h3>Exchange data format<a class="headerlink" href="#exchange-data-format" title="Link to this heading">#</a></h3>
+<p>Exchanges are a list of the inputs and outputs of an activity. For
+example an activity might consume some resources, emit some emissions,
+and have other technological goods as emissions. Each activity also has
+at least one technological output.</p>
+<p>Each exchange has a <code class="docutils literal notranslate"><span class="pre">type</span></code>. There are three standard exchange types in
+Brightway2, but you can define your own if you need to define different
+kinds of systems.</p>
+<section id="production-exchanges">
+<h4>Production exchanges<a class="headerlink" href="#production-exchanges" title="Link to this heading">#</a></h4>
+<p>A production exchange defines how much of the output is produced by an
+activity. For example, the process “make a fizzbang” would produce one
+kilogram of fizzbang (the amount is normally one, but doesn’t have to
+be).</p>
+<p>Production exchanges have the type <code class="docutils literal notranslate"><span class="pre">production</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A production exchange is <strong>not</strong> required. A default value of one will
+be applied if no production exchange is defined. This default value is
+usually the most logical amount, so should only be changed in special
+circumstances.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using a production value other than one can be confusing. See the blog
+post <a class="reference external" href="http://chris.mutel.org/non-unitary.html">What happens with a non-unitary production amount in
+LCA?</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Multioutput processes (i.e. more than one production process) can be
+used in Brightway2, but only under special circumstances. See the blog
+post <a class="reference external" href="http://example.com">Multi-output processes in matrix-based LCA</a>.</p>
+</div>
+</section>
+<section id="substitution-exchanges">
+<h4>Substitution exchanges<a class="headerlink" href="#substitution-exchanges" title="Link to this heading">#</a></h4>
+<p>A substitution exchange is used in multi-output processes to indicate
+the avoided production of a product by another activity. Substitution
+exchanges have positive values, and the type [substitution].</p>
+</section>
+<section id="technosphere-exchanges">
+<h4>Technosphere exchanges<a class="headerlink" href="#technosphere-exchanges" title="Link to this heading">#</a></h4>
+<p>A technosphere exchange is a process input from the technosphere, i.e.
+the industrial economy. For example, the process “make a fizzbang”
+could have an input of seven kilograms of lollies.</p>
+<p>Technosphere exchanges have the type <code class="docutils literal notranslate"><span class="pre">technosphere</span></code>.</p>
+</section>
+<section id="biosphere-exchanges">
+<h4>Biosphere exchanges<a class="headerlink" href="#biosphere-exchanges" title="Link to this heading">#</a></h4>
+<p>A biosphere exchange is a consumption of a resource or and emission to
+the environment associated with a process; its value will be placed in
+the biosphere matrix.</p>
+<p>Biosphere exchanges have the type <code class="docutils literal notranslate"><span class="pre">biosphere</span></code>.</p>
+</section>
+</section>
+<section id="database-is-a-subclass-of-datastore">
+<h3>Database is a subclass of DataStore<a class="headerlink" href="#database-is-a-subclass-of-datastore" title="Link to this heading">#</a></h3>
+<p>Much of the functionality of Database objects is provided by its parent
+class, <code class="docutils literal notranslate"><span class="pre">datastore</span></code>. The normal methods
+provided by a data store are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>write(data)</strong>: Write data to disk</p></li>
+<li><p><strong>load</strong>: Load data from disk</p></li>
+<li><p><strong>register</strong>: Register object with metadata store</p></li>
+<li><p><strong>deregister</strong>: Remove object from metadata store</p></li>
+<li><p><strong>copy(name)</strong>: Create a new object with name <code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
+<li><p><strong>backup</strong>: Write backup of data</p></li>
+<li><p><strong>validate(data)</strong>: Validate data using this object’s validator</p></li>
+</ul>
+</div></blockquote>
+<p>Data store objects are instantiated with the object name, e.g.
+<code class="docutils literal notranslate"><span class="pre">DataStore(&quot;name</span> <span class="pre">goes</span> <span class="pre">here&quot;)</span></code>.</p>
+<p>Brightway2-data defines the following data stores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SingleFileDatabase</span> <span class="pre">&lt;single-file-database&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JSONDatabase</span> <span class="pre">&lt;json-database&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weighting</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalization</span></code></p></li>
+</ul>
+<p>The schema for an <code class="docutils literal notranslate"><span class="pre">LCI</span> <span class="pre">dataset</span></code> in <a class="reference external" href="https://pypi.python.org/pypi/voluptuous/">voluptuous</a> is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;categories&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">):</span> <span class="nb">object</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;unit&quot;</span><span class="p">):</span> <span class="n">basestring</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">):</span> <span class="n">basestring</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">):</span> <span class="n">basestring</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;exchanges&quot;</span><span class="p">):</span> <span class="p">[</span><span class="n">exchange</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Where an <code class="docutils literal notranslate"><span class="pre">exchange</span></code> is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">Required</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">):</span> <span class="n">valid_tuple</span><span class="p">,</span>
+    <span class="n">Required</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">):</span> <span class="n">basestring</span><span class="p">,</span>
+    <span class="n">Required</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;uncertainty type&quot;</span><span class="p">):</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;loc&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;scale&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;shape&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;minimum&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+    <span class="n">Optional</span><span class="p">(</span><span class="s2">&quot;maximum&quot;</span><span class="p">):</span> <span class="n">Any</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Database documents can be validated with
+<code class="docutils literal notranslate"><span class="pre">bw2data.validate.db_validator(my_data)</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">Database(&quot;my</span> <span class="pre">database</span> <span class="pre">name&quot;).validate(my_data)</span></code>.</p>
+</div>
+</section>
+<section id="getting-the-signs-right">
+<h3>Getting the signs right<a class="headerlink" href="#getting-the-signs-right" title="Link to this heading">#</a></h3>
+<p>Brightway uses the following rules to set values in the technosphere and
+biosphere matrices:</p>
+<ul class="simple">
+<li><p>[biosphere] exchange values are inserted into the
+biosphere matrix without any modification.</p></li>
+<li><p>[production] and [substitution] exchanges
+are inserted into the technosphere matrix without any modification.</p></li>
+<li><p>[technosphere] exchanges values are multiplied by
+negative one, and then inserted into the technosphere matrix.</p></li>
+</ul>
+<p>In the technosphere matrix, negative values represent the consumption of
+products, while positive values represent the production of products.
+Substitution exchanges are positive because this forces the substituted
+activity to have a negative production amount, representing the avoided
+production pathway.</p>
+<p>These rules are consistent with and grow out of the traditional Leontief
+inverse of IO tables <span class="math notranslate nohighlight">\(x = (I - A)^{-1}d\)</span>.</p>
+<p>As a consequence of these rules, a technosphere exchange with a negative
+value is the same as a production exchange, and vice-versa.</p>
+<p>Biosphere exchange amounts can occasionally be negative, and some
+characterization factors are also negative. The default metadata in
+Brightway follows ecoinvent system assumptions about biosphere flow
+categories:</p>
+<ul class="simple">
+<li><p>Biosphere flows whose categories are [air],
+[soil], and [water] are emissions into the
+natural environment.</p></li>
+<li><p>Biosphere flows with the category [natural resource] are
+consumption of natural resources from the natural environment.</p></li>
+</ul>
+<p>Biosphere exchanges with negative values reverse these assumption; so, a
+biosphere flow of -2 kg of carbon dioxide with the category air would be
+the <em>removal</em> of carbon dioxide from the natural environment. The signs
+of biosphere exchanges don’t really matter, but they should be
+consistent with the signs of your impact assessment characterization
+factors. See also the notebook on <a class="reference external" href="https://github.com/brightway-lca/brightway2/blob/master/notebooks/Negative%20Biosphere%20flows%20and%20CFs.ipynb">negative Biosphere flows and
+CFs</a>.</p>
+</section>
+<section id="databases-can-be-stored-in-different-ways">
+<h3>Databases can be stored in different ways<a class="headerlink" href="#databases-can-be-stored-in-different-ways" title="Link to this heading">#</a></h3>
+<p>The default storage backend for databases stores each database in a
+separate file. This is the easiest and most convenient approach for most
+cases. However, Brightway2 also supports pluggable database backends,
+which can change how databases are stored and queried.</p>
+<p>Brightway2-data also provides <code class="docutils literal notranslate"><span class="pre">bw2data.backends.JSONDatabase</span></code>, which
+stores each dataset as a separate file serialized to
+<a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON</a>. This approach works well with
+version-control systems, as each dataset change can be saved
+individually. Use of <code class="docutils literal notranslate"><span class="pre">JSONDatabase</span></code> is shown in a simple <a class="reference external" href="https://github.com/brightway-lca/brightway2/blob/master/notebooks/JSON%20database.ipynb">ipython
+notebook</a>.</p>
+<p>Before using <code class="docutils literal notranslate"><span class="pre">JSONDatabase</span></code>, please read its technical documentation
+carefully: <code class="docutils literal notranslate"><span class="pre">json-database</span></code>. To create a
+<code class="docutils literal notranslate"><span class="pre">JSONDatabase</span></code>, use <code class="docutils literal notranslate"><span class="pre">Database(&quot;my</span> <span class="pre">db</span> <span class="pre">name&quot;,</span> <span class="pre">backend=&quot;json&quot;)</span></code>. To switch
+backends for a database, use
+<code class="docutils literal notranslate"><span class="pre">convert_backend</span> <span class="pre">&lt;switching-backends&gt;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">custom-backends</span></code>, such as using an actual
+relational database, can also be defined.</p>
+</section>
+<section id="biosphere-database">
+<h3>Biosphere database<a class="headerlink" href="#biosphere-database" title="Link to this heading">#</a></h3>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">bw2setup()</span></code> in a python shell, Brightway2 will install a
+special <code class="docutils literal notranslate"><span class="pre">biosphere3</span></code> database. This database has all the resource and
+emission flows from the ecoinvent database, version 2.</p>
+<p>You can define biosphere flows - resources and emissions - in any
+database you like, but it is probably best to use the pre-defined flows
+in the <code class="docutils literal notranslate"><span class="pre">biosphere</span></code> database whenever you can. If you need to add some
+custom flows, feel free to create a separate database.</p>
+<p>You can also change the name for the default biosphere database in the
+<code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">preferences</span> <span class="pre">&lt;user-preferences&gt;</span></code>.</p>
+</section>
+</section>
+<section id="impact-assessment">
+<h2>Impact Assessment<a class="headerlink" href="#impact-assessment" title="Link to this heading">#</a></h2>
+<p>In Brightway2, each impact assessment method is a set of
+characterization factors for a set of biosphere flows. Each impact
+category and subcategory is a separate method, and each method is stored
+and calculated separately.</p>
+<p>Methods are identified by a list of names, which could be as simple as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s2">&quot;I scream&quot;</span><span class="p">,</span> <span class="s2">&quot;you scream&quot;</span><span class="p">,</span> <span class="s2">&quot;we all scream&quot;</span><span class="p">,</span> <span class="s2">&quot;for ice cream&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which is probably most applicable for those who are particularly
+concerned with ice cream resource depletion; a more typical example is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;ecological scarcity 1997&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Impact assessment method names can have any length and number of
+qualifiers - there is nothing special or sacred about three levels - but
+must always be a list of strings.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For technical reasons, impact assessment names must be stored as a
+<a class="reference external" href="http://docs.python.org/2/tutorial/datastructures.html#tuples-and-sequences">tuple</a>,
+not a <a class="reference external" href="http://docs.python.org/2/tutorial/introduction.html#lists">list</a>,
+i.e. they must have <code class="docutils literal notranslate"><span class="pre">()</span></code> at the beginning and end, and not <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+</div>
+<section id="method-metadata">
+<h3>Method metadata<a class="headerlink" href="#method-metadata" title="Link to this heading">#</a></h3>
+<p>Method metadata is a normal dictionary, and is indexed in the <code class="docutils literal notranslate"><span class="pre">methods</span></code>
+object. The object <code class="docutils literal notranslate"><span class="pre">methods</span></code> is a special dictionary that saves itself
+whenever values change, but is otherwise still a normal dictionary.
+<code class="docutils literal notranslate"><span class="pre">new_method.metadata</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">methods</span></code>. So, to change the
+metadata, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span><span class="p">[(</span><span class="s1">&#39;foo&#39;</span><span class="p">,)]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Or to chance a single value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span><span class="p">[(</span><span class="s1">&#39;IPCC 2007&#39;</span><span class="p">,</span> <span class="s1">&#39;climate change&#39;</span><span class="p">,</span> <span class="s1">&#39;GWP 100a&#39;</span><span class="p">)][</span><span class="s1">&#39;timeframe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<p>Note that after changing a single value, you will need to flush the
+changes to disk:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Methods should have the following metadata:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>description</em>: A description of this method or submethod.</p></li>
+<li><p><em>unit</em>: The unit of this method or submethod.</p></li>
+</ul>
+</div></blockquote>
+<p>In addition, the metadata <code class="docutils literal notranslate"><span class="pre">abbreviation</span></code> is generated automatically.</p>
+</section>
+<section id="lcia-method-documents">
+<h3>LCIA method documents<a class="headerlink" href="#lcia-method-documents" title="Link to this heading">#</a></h3>
+<p>The impact assessment method documents are quite simple - indeed, it is
+a bit of a stretch to call them documents at all. Instead, they are a
+list of biosphere flow references, characterization factors, and
+locations. All LCIA methods in Brightway2 are regionalized, though the
+default installed methods only provide global characterization factors.
+Here is a simple example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brightway2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">Method</span><span class="p">((</span><span class="s1">&#39;ecological scarcity 1997&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">load</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This returns the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[(</span><span class="sa">u</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;21c70338ff2e1cdc8e468f4c90f113a1&#39;</span><span class="p">),</span> <span class="mi">32000</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;GLO&#39;</span><span class="p">],</span>
+ <span class="p">[(</span><span class="sa">u</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;86a37cf9e44593f1c41fdce53de27715&#39;</span><span class="p">),</span> <span class="mi">32000</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;GLO&#39;</span><span class="p">],</span>
+ <span class="p">[(</span><span class="sa">u</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;a8cc9c61aa343fa01532bb16cec7f90d&#39;</span><span class="p">),</span> <span class="mi">32000</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;GLO&#39;</span><span class="p">],</span>
+ <span class="p">[(</span><span class="sa">u</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;b0a29177e77471a49b5a7d6a88212bf8&#39;</span><span class="p">),</span> <span class="mi">32000</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;GLO&#39;</span><span class="p">],</span>
+ <span class="p">[(</span><span class="sa">u</span><span class="s1">&#39;biosphere&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;72c1cf2fee31a2cb6cdc39abda29a0df&#39;</span><span class="p">),</span> <span class="mi">32000</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;GLO&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Each list elements has two required components and a third optional
+component.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>A reference to a biosphere flow, e.g.
+<code class="docutils literal notranslate"><span class="pre">(u'biosphere',</span> <span class="pre">u'21c70338ff2e1cdc8e468f4c90f113a1')</span></code>.</p></li>
+<li><p>The numeric characterization factor. This can either be a number,
+or a uncertainty dictionary (see
+<code class="docutils literal notranslate"><span class="pre">uncertainty-type</span></code>).</p></li>
+<li><p>An <em>optional</em> location, used for regionalized impact assessment.
+The global location <code class="docutils literal notranslate"><span class="pre">GLO</span></code> is inserted as a default if not location
+is specified.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LCIA method documents can be validated with
+<code class="docutils literal notranslate"><span class="pre">bw2data.validate.ia_validator(my_data)</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">Method((&quot;my&quot;,</span> <span class="pre">&quot;method&quot;,</span> <span class="pre">&quot;name&quot;)).validate(my_data)</span></code>.</p>
+</div>
+</section>
+<section id="default-lcia-methods">
+<h3>Default LCIA methods<a class="headerlink" href="#default-lcia-methods" title="Link to this heading">#</a></h3>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">bw2setup()</span></code>, Brightway2 will install around 700 default
+LCIA methods, as provided by the ecoinvent center. These LCIA methods
+will work for both ecoinvent 2 and 3.</p>
+</section>
+</section>
+<section id="parameterized-datasets">
+<h2>Parameterized datasets<a class="headerlink" href="#parameterized-datasets" title="Link to this heading">#</a></h2>
+<p>Brightway2 supports variables and formulas stored as strings, similar to
+other LCA software. So instead of defining a fixed value for an
+exchange, you could enter a formula of “fuel_efficiency *
+average_distance”, where both “fuel_efficiency” and
+“average_distance” were variables stored in a special way, and maybe
+even parameterized themselves. Parsing strings is not trivial, and so
+the machinery to handle such parameterization is a bit complex:</p>
+<p><img alt="image" src="../../_images/parameters.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Parameterized inventory datasets only work with databases that use the default SQLite backend.</p>
+</div>
+<section id="groups">
+<h3>Groups<a class="headerlink" href="#groups" title="Link to this heading">#</a></h3>
+<p>Parameters are tricky because you have to parse and understand
+dependencies in formula strings - where if “efficiency” defined, and
+is it a Python reserved term or a function or a variable, etc. To make
+these dependencies explicit, Brightway2 uses the ideas of <strong>groups</strong> to
+collect parameters, just like databases collect inventory datasets. Each
+parameter belongs to a group, and inside a group each parameter has to
+have a unique name. Groups also have unique names, and are defined at
+the three different levels that parameters exist: project, database, or
+a set of activities. Groups cannot cross levels.</p>
+<p>Groups form a hierarchy used to evaluate and find symbols, with project
+parameters at the top, and activity parameters at the bottom. When
+parsing an activity parameter formula, unknown variable names will be
+searched in that activity parameter set of variables, then in the
+database parameters defined for the database the activity is in, and
+finally in the project parameters. An missing value will be taken as
+soon as it is found - so if “efficiency” exists in a database
+parameter group and the project parameter group, its value will be taken
+from the database parameters.</p>
+<p>Note the following restrictions on groups:</p>
+<ul class="simple">
+<li><p>The group name ‘project’ is reserved for the group of project
+parameters</p></li>
+<li><p>Database names are reserved for database parameters (it is also
+their group name)</p></li>
+<li><p>Activity parameter groups can include more than one activity, but
+cannot span multiple databases</p></li>
+<li><p>Single activities cannot be in multiple groups</p></li>
+<li><p>Group dependencies cannot be circular</p></li>
+</ul>
+<p>These restrictions are enforced in the database, so you can’t screw up
+your data, but they might explain any errors you encounter.</p>
+</section>
+<section id="active-versus-passive-parameters">
+<h3>Active versus passive parameters<a class="headerlink" href="#active-versus-passive-parameters" title="Link to this heading">#</a></h3>
+<p>Some background datasets have lots of parameters, and one doesn’t
+necessarily want them all to be imported into the Brightway parameter
+machinery - after all, they have been resolved already. We therefore use
+a distinction between active and passive parameters. Active parameters
+are stored in a special SQLite database for parameters, and their
+formulas are parsed and checked to make sure there are no missing or
+unknown symbols. Active parameters are recalculated whenever their
+upstream groups change, and can be used in dynamic calculation. Passive
+parameters are stored in either <code class="docutils literal notranslate"><span class="pre">Database</span></code> instances (as the key
+<code class="docutils literal notranslate"><span class="pre">parameters</span></code> in the metadata), <code class="docutils literal notranslate"><span class="pre">Activity</span></code> objects (as the key
+<code class="docutils literal notranslate"><span class="pre">parameters</span></code> in the metadata), or in <code class="docutils literal notranslate"><span class="pre">Exchanges</span></code> (as the key <code class="docutils literal notranslate"><span class="pre">formula</span></code>
+in the exchange data). They are not evaluated or otherwise used.</p>
+<p>The parameters manager has functions for activating activities and
+exchanges.</p>
+</section>
+<section id="parameters-manager">
+<h3>Parameters manager<a class="headerlink" href="#parameters-manager" title="Link to this heading">#</a></h3>
+<p>The most common way to interact with parameters data is through the
+parameters manager, provided as <code class="docutils literal notranslate"><span class="pre">parameters</span></code>.</p>
+</section>
+<section id="peewee-objects">
+<h3>Peewee objects<a class="headerlink" href="#peewee-objects" title="Link to this heading">#</a></h3>
+<p>At a finer level of control, the parameterized table objects use <a class="reference external" href="http://docs.peewee-orm.com/en/latest/index.html">peewee
+objects</a> directly, so
+you will use some different syntax than with [Activity] and
+[Exchange] (see the <a class="reference external" href="https://github.com/brightway-lca/brightway2-data/blob/master/bw2data/parameters.py">parameters source
+code</a>).
+The long-term goal is to transition all objects to peewee directly,
+instead of using proxies.</p>
+<p>The parameters framework is centered around the
+<code class="docutils literal notranslate"><span class="pre">Group,</span> <span class="pre">ProjectParameter,</span> <span class="pre">DatabaseParameter,</span> <span class="pre">and</span> <span class="pre">ActivityParameter</span> <span class="pre">classes</span> <span class="pre">&lt;parameters&gt;</span></code>.</p>
+<p>Here are some examples of peewee-style queries:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Group</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;some name&quot;</span><span class="p">)</span>
+
+<span class="n">group</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">Group</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;some name&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">DatabaseParameter</span><span class="o">.</span><span class="n">select</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">DatabaseParameter</span><span class="o">.</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;some db&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">amount</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">formula</span><span class="p">)</span>
+
+<span class="n">ActivityParameter</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">amount</span> <span class="o">=</span> <span class="n">some_new_value</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ActivityParameter</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;some name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="n">ProjectParameter</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ProjectParameter</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;some name&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="intermediate-and-processed-data">
+<h2>Intermediate and processed data<a class="headerlink" href="#intermediate-and-processed-data" title="Link to this heading">#</a></h2>
+<p>Both inventory datasets and impact assessment methods are stored as
+structured text files, stored in the <code class="docutils literal notranslate"><span class="pre">intermediate</span></code> folder. These files
+are not efficient when constructing the technosphere, biosphere, and
+characterization matrices. Brightway2 also has a <code class="docutils literal notranslate"><span class="pre">processed</span></code> folder,
+which stores only the data needed to construct the various computational
+matrices. These data are stored as <a class="reference external" href="http://docs.scipy.org/doc/numpy/user/basics.rec.html">numpy structured
+arrays</a>.</p>
+<p>For both databases and LCIA methods, the method <code class="docutils literal notranslate"><span class="pre">.write(some_data)</span></code> will
+write an <em>intermediate</em> data file, while the subsequent method
+<code class="docutils literal notranslate"><span class="pre">.process()</span></code> will transform the <code class="docutils literal notranslate"><span class="pre">intermediate</span> <span class="pre">data</span></code> file to an array.
+All extraneous information is removed, and only the numeric values
+needed are retained. Put another way, <em>processing</em> transforms
+unstructured data documents to a highly-structured binary form for
+calculations. <code class="docutils literal notranslate"><span class="pre">write</span></code> and <code class="docutils literal notranslate"><span class="pre">process</span></code> are intentionally separate, as it is
+sometimes desirable to do one and not the other.</p>
+<p><code class="docutils literal notranslate"><span class="pre">building-matrices</span></code> describes how
+processed data are turned into matrices for LCA calculations.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Every time you save a new version of an inventory database or an impact assessment method, e.g. with <code class="docutils literal notranslate"><span class="pre">my_database.write(my_data)</span></code>, be sure to also call <code class="docutils literal notranslate"><span class="pre">my_database.process()</span></code>, or your changes will not be used in LCA calculations.</p>
+</div>
+<section id="processing-data">
+<h3>Processing data<a class="headerlink" href="#processing-data" title="Link to this heading">#</a></h3>
+<p><em>Processing data</em> converts document data to a binary form tailored for
+creating matrices (a NumPy array).</p>
+</section>
+<section id="mappings">
+<h3>Mappings<a class="headerlink" href="#mappings" title="Link to this heading">#</a></h3>
+<p>Some LCA data is not numerical, like locations and dataset codes. We
+need numerical representations of these values to construct the
+processed data arrays, however. In this case, we create a special
+dictionary that maps each unique data value to an integer index.
+Brightway2 uses two such mappings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mapping</span> <span class="pre">&lt;mapping&gt;</span></code>: Maps inventory
+objects (activities, biosphere flows, and anything else that would
+appear in a supply chain graph) to indices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geomapping</span></code>: Map locations (both
+inventory and regionalized impact assessment) to indices.</p></li>
+</ul>
+</div></blockquote>
+<p>Items are added to mappings using <code class="docutils literal notranslate"><span class="pre">.add(keys)</span></code>, and removed using
+<code class="docutils literal notranslate"><span class="pre">.delete(keys)</span></code>. However, managing the different mappings is done for
+you automatically.</p>
+</section>
+</section>
+<section id="cataloging-what-we-have-metadata-stores">
+<h2>Cataloging what we have - Metadata stores<a class="headerlink" href="#cataloging-what-we-have-metadata-stores" title="Link to this heading">#</a></h2>
+<p>The building blocks in Brightway2 are LCI databases, LCIA methods, etc.
+However, we also need to keep track of which LCI databases and LCIA
+methods we have, as well as some additional information about them. For
+example, LCIA methods have units, and databases can have version
+numbers. A <em>metadata store</em> stores information about data objects like
+databases and methods.</p>
+<p>The base class for metadata is <code class="docutils literal notranslate"><span class="pre">serialized-dict</span></code>, which is basically a normal Python dictionary that can be
+easily saved or loaded (i.e. serialized) to or from a
+<a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON</a> file. These files can be
+easily edited in a normal text editor.</p>
+<p>Brightway2 defines the following metadata stores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">databases</span></code>: LCI databases</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">methods</span></code>: LCIA methods
+(characterization factors)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalizations</span></code>: LCIA normalization
+factors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weightings</span></code>: LCIA weighting factors</p></li>
+</ul>
+<section id="metadata-should-be-singletons">
+<h3>Metadata should be singletons<a class="headerlink" href="#metadata-should-be-singletons" title="Link to this heading">#</a></h3>
+<p>There should be only one instance of each metadata store, to avoid
+having conflicting data (the <a class="reference external" href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton
+pattern</a>). The normal
+pattern is to instantiate each class in the same file as the class
+pattern:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyObjects</span><span class="p">(</span><span class="n">bw2data</span><span class="o">.</span><span class="n">serialization</span><span class="o">.</span><span class="n">SerializedDict</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;sweet-peppers.json&quot;</span>
+
+<span class="n">myobjects</span> <span class="o">=</span> <span class="n">MyObjects</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="using-metadata-stores">
+<h3>Using metadata stores<a class="headerlink" href="#using-metadata-stores" title="Link to this heading">#</a></h3>
+<p>Metadata stores are mostly useful when examining which objects are
+available:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">databases</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="n">name</span>
+<span class="s2">&quot;a database name&quot;</span> <span class="ow">in</span> <span class="n">databases</span>
+</pre></div>
+</div>
+<p>Metadata stores are also used when deleting data objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">databases</span><span class="p">[</span><span class="s2">&quot;some database to delete&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Finally, and hopefully not surpisingly, metadata stores can be used to
+get the actual data object metadata:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span><span class="p">[</span><span class="n">methods</span><span class="o">.</span><span class="n">random</span><span class="p">()]</span>
+<span class="o">&gt;&gt;</span> <span class="p">{</span><span class="sa">u</span><span class="s1">&#39;abbreviation&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;recipe-endpoint-ha-wo-lthc.0ba25d5fd76e35b3125224ce78d37151&#39;</span><span class="p">,</span>
+    <span class="sa">u</span><span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="sa">u</span><span class="s1">&#39;points&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brightway-components">Brightway Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projects">Projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory-databases">Inventory Databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities-and-exchanges">Activities and Exchanges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-data-format">Activity data format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniquely-identifying-activities">Uniquely identifying activities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-hashes">Activity hashes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities-must-be-uniquely-identified">Activities must be uniquely identified</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exchange-data-format">Exchange data format</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#production-exchanges">Production exchanges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substitution-exchanges">Substitution exchanges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#technosphere-exchanges">Technosphere exchanges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biosphere-exchanges">Biosphere exchanges</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-is-a-subclass-of-datastore">Database is a subclass of DataStore</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-signs-right">Getting the signs right</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#databases-can-be-stored-in-different-ways">Databases can be stored in different ways</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biosphere-database">Biosphere database</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-assessment">Impact Assessment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-metadata">Method metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lcia-method-documents">LCIA method documents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-lcia-methods">Default LCIA methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterized-datasets">Parameterized datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groups">Groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#active-versus-passive-parameters">Active versus passive parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-manager">Parameters manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peewee-objects">Peewee objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-and-processed-data">Intermediate and processed data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-data">Processing data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mappings">Mappings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cataloging-what-we-have-metadata-stores">Cataloging what we have - Metadata stores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-should-be-singletons">Metadata should be singletons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-metadata-stores">Using metadata stores</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/maximikos/iep-novice/edit/main/source/content/theory/structure.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/content/theory/structure.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+<div class="tocsection supportbutton">
+
+    <a href=" novice/../../../content/other/support.html">
+      <i class="far fa-heart"></i> Support IEP
+    </a>
+</div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024 International Society for Industrial Ecology.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p>🌿🐛 Found a bug? Something not working? Frustrated? <a href=" novice/../../../content/contributing/bugs.html">Please report it!</a></p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

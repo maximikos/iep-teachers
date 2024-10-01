@@ -1,0 +1,41 @@
+name: documentation
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      #- uses: actions/setup-python@v3
+      - name: Make conda environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: 3.11
+          environment-file: ./environment.yml    # Path to the documentation conda environment
+          channels: conda-forge,defaults
+          channel-priority: strict          
+          show-channel-urls: true
+          #auto-update-conda: false
+          #auto-activate-base: false
+          #activate-environment: sphinx_documentation
+      - run: |
+          conda info
+          conda list
+      - name: Sphinx build
+        run: |
+          sphinx-build source _build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build
+          force_orphan: true
