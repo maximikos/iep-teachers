@@ -10,7 +10,7 @@ import os
 
 project = 'IEP'
 copyright = datetime.date.today().strftime("%Y") + ' International Society for Industrial Ecology'
-version: str = 'novice' # required by the version switcher
+version: str = 'teachers' # required by the version switcher
 
 ###################################################################################################
 ### Project Configuration #########################################################################
@@ -86,7 +86,7 @@ html_sidebars = {
 html_theme_options = {
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/version-dropdown.html
     "switcher": {
-        "json_url": "https://raw.githubusercontent.com/maximikos/iep-novice/main/source/_static/switcher.json",
+        "json_url": "https://raw.githubusercontent.com/maximikos/iep-teachers/main/source/_static/switcher.json",
         "version_match": version
     },
     # page elements
