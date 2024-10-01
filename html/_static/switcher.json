@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Novice",
+    "version": "novice",
+    "url": "https://maximikos.github.io/iep-novice/"
+  },
+  {
+    "name": "Advanced",
+    "version": "advanced",
+    "url": "https://maximikos.github.io/iep-advanced/"
+  }
+]
