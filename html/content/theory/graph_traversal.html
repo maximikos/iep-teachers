@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="100x100" href="../../_static/logo/iep_favicon.ico" type="image/x-icon">
+    <title>Graph traversal &#8212; IEP  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=80d638d1" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/theory/graph_traversal';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.2';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://raw.githubusercontent.com/maximikos/iep-novice/main/source/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'novice';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Normal Static LCA" href="static_and_stochastic_lca.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nemora_logo_small.png" class="logo__image only-light" alt="IEP  documentation - Home"/>
+    <script>document.write(`<img src="../../_static/nemora_logo_small.png" class="logo__image only-dark" alt="IEP  documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../insights/index.html">
+                        Insights
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../resources/index.html">
+                        Resources
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contributing/index.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contact/contact.html">
+                        Contact
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../about/index.html">
+                        About
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/maximikos" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../insights/index.html">
+                        Insights
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../resources/index.html">
+                        Resources
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contributing/index.html">
+                        Contributing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../contact/contact.html">
+                        Contact
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../about/index.html">
+                        About
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/maximikos" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="history/index.html">History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/index.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methods/index.html">Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Graph traversal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="static_and_stochastic_lca.html">Normal Static LCA</a></li>
+
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Theory</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Graph traversal</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="graph-traversal">
+<h1>Graph traversal<a class="headerlink" href="#graph-traversal" title="Link to this heading">#</a></h1>
+<p>To generate graphs of impact like supply chain or Sankey diagrams, we
+need to traverse the graph of the supply chain. The <code class="docutils literal notranslate"><span class="pre">GraphTraversal</span></code>
+class does this in a relatively intelligent way, assessing each
+inventory activity only once regardless of how many times it is used,
+and prioritizing activities based on their LCA score. It is usually
+possible to create a reduced graph of the supply chain, with only the
+most relevant pathways and flows included, in a few seconds.</p>
+<section id="illustration-of-graph-traversal">
+<h2>Illustration of graph traversal<a class="headerlink" href="#illustration-of-graph-traversal" title="Link to this heading">#</a></h2>
+<p>It’s easiest to understand how graph traversal is implemented with a
+simple example. Take this system:</p>
+<ul class="simple">
+<li><p>This system has four <strong>nodes</strong>, which are LCI processes, also called
+transforming activities. Each <strong>node</strong> has one reference product,
+and a set of zero or more technosphere inputs. By convention, node
+<code class="docutils literal notranslate"><span class="pre">A</span></code> produces one unit of product <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+<li><p>This system has four <strong>edges</strong> which define the inputs of each node.
+An edge has a start, an end, and an amount.</p></li>
+<li><p>We consider solving this system for a <em>functional unit</em> of one unit
+of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+</ul>
+<p>As we traverse this supply chain, we will keep different data for the
+nodes and the edges. For nodes, we are interested in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The total amount of this node needed to produce the
+functional unit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cum</span></code>: The cumulative LCA impact score attributable to the needed
+amount of this node, <em>including its specific supply chain</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ind</span></code>: The individual LCA impact score directly attributable to one
+unit of this node, i.e. the score from the direct emissions and
+resource consumption of this node.</p></li>
+</ul>
+<p>For edges, we want to know:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">to</span></code>: The row index of the node consuming the product.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code>: The row index of the node producing the product.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code>: The total amount of product <code class="docutils literal notranslate"><span class="pre">from</span></code> needed for the amount
+of <code class="docutils literal notranslate"><span class="pre">to</span></code> needed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exc_amount</span></code>: The amount of <code class="docutils literal notranslate"><span class="pre">from</span></code> needed for <em>one unit</em> of <code class="docutils literal notranslate"><span class="pre">to</span></code>,
+i.e. the value given in the technosphere matrix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">impact</span></code>: The total LCA impact score embodied in this edge, i.e. the
+individual score of <code class="docutils literal notranslate"><span class="pre">from</span></code> times <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p></li>
+</ul>
+<p>Our functional unit is one unit of <code class="docutils literal notranslate"><span class="pre">A</span></code>. Before starting any
+calculations, we need to set up our data structures. First, we have an
+empty list of <strong>edges</strong>. We also have a <strong>heap</strong>, a list which is
+<a class="reference external" href="https://docs.python.org/2/library/heapq.html">automatically sorted</a>,
+and keeps track of the <strong>nodes</strong> we need to examine. <strong>nodes</strong> are
+identified by their row index in the <em>technosphere matrix</em>. Finally, we
+have a dictionary of <strong>nodes</strong>, which looks up nodes by their row
+indices.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">heap</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">[],</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>We create a special node, the functional unit, and insert it into the
+nodes dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;cum&#39;</span><span class="p">:</span> <span class="n">total_lca_score</span><span class="p">,</span>
+    <span class="s1">&#39;ind&#39;</span><span class="p">:</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">total_lca_score</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <em>cumulative LCA impact score</em> is obviously the total LCA score; we
+set the <em>individual LCA score</em> to some small but non-zero value so that
+it isn’t deleted in graph simplification later on.</p>
+<p>We next start building our list of edges. We start with all the inputs
+to the <em>functional unit</em>, which in this case is only one unit of <code class="docutils literal notranslate"><span class="pre">A</span></code>.
+Note that the functional unit can have multiple inputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">amount</span> <span class="ow">in</span> <span class="n">functional_unit</span><span class="p">:</span>
+    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Special id of functional unit</span>
+        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="n">node_id</span><span class="p">,</span>
+        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span>
+        <span class="s2">&quot;exc_amount&quot;</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span>
+        <span class="s2">&quot;impact&quot;</span><span class="p">:</span> <span class="n">LCA</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>  <span class="c1"># Evaluate LCA impact score for node_id/amount</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Finally, we push each node to the <strong>heap</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">amount</span> <span class="ow">in</span> <span class="n">functional_unit</span><span class="p">:</span>
+    <span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">LCA</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">),</span> <span class="n">node_id</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This is not so easy to understand at first glance. What is
+<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">LCA(node_id,</span> <span class="pre">amount).score</span></code>? Why the absolute value? What is this
+<code class="docutils literal notranslate"><span class="pre">heappush</span></code> thing?</p>
+<p>We want one <em>divided by</em> the LCA impact score for node <code class="docutils literal notranslate"><span class="pre">A</span></code> because our
+heap is sorted in ascending order, and we want the highest score to be
+first.</p>
+<p>We take the absolute value because we are interested in the magnitude of
+node scores in deciding which node to process next, not the sign of the
+score - leaving out the absolute value would put all negative scores at
+the top of the heap (which is sorted in ascending order).</p>
+<p><code class="docutils literal notranslate"><span class="pre">heappush</span></code> is just a call to push something on to the heap, which is our
+automatically sorted list of nodes to examine.</p>
+<p>After this first iteration, we have the following nodes and edges in our
+graph traversal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;cum&#39;</span><span class="p">:</span> <span class="n">some</span> <span class="n">number</span><span class="p">,</span> <span class="s1">&#39;ind&#39;</span><span class="p">:</span> <span class="n">some</span> <span class="n">small</span> <span class="n">number</span><span class="p">}}</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Assuming A is 0</span>
+    <span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;exc_amount&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;impact&#39;</span><span class="p">:</span> <span class="n">some</span> <span class="n">number</span>
+<span class="p">}]</span>
+<span class="n">heap</span> <span class="o">=</span> <span class="p">[(</span><span class="n">some</span> <span class="n">number</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>After this, it is rather simple: pull off the next node from the <em>heap</em>,
+add it to the list of nodes, construct its edges, and add its inputs to
+the heap. Iterate until no new nodes are found.</p>
+<p>Because the heap is automatically sorted, at each iteration we will take
+the node with the highest impact that hasn’t yet been assessed.</p>
+<p>There are two more things to keep in mind:</p>
+<ul class="simple">
+<li><p>We use a cutoff criteria to stop traversing the supply chain - any
+node whose cumulative LCA impact score is too small is not added to
+the heap.</p></li>
+<li><p>We only visit each node once. The is functionality in <code class="docutils literal notranslate"><span class="pre">bw2analyzer</span></code>
+to “unroll” the supply chain so that afterwards each process can
+occur more than once.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-of-graph-traversal">Illustration of graph traversal</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<div id="searchbox"></div></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/maximikos/iep-novice/edit/main/source/content/theory/graph_traversal.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/content/theory/graph_traversal.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+<div class="tocsection supportbutton">
+
+    <a href=" novice/../../../content/other/support.html">
+      <i class="far fa-heart"></i> Support IEP
+    </a>
+</div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024 International Society for Industrial Ecology.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p>🌿🐛 Found a bug? Something not working? Frustrated? <a href=" novice/../../../content/contributing/bugs.html">Please report it!</a></p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
