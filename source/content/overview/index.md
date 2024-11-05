@@ -1,13 +1,14 @@
-# Theory
+# Overview of what you can find here
 
-This section covers theoretical aspects concerning industrial ecology methods, concepts, and history.
+Find out about different teaching materials, study programmes, etc.
 
 ```{toctree}
 ---
 maxdepth: 3
 hidden: true
 ---
-history/index
-concepts/index
-methods/index
+materials/index
+teachers/index
+programmes/index
+conferences/index
 ```
