@@ -1,6 +1,6 @@
-# Methods
+# Conferences
 
-Something about methods, including LCA, MFA, IO...
+An overview of upcoming conferences.
 
 ```{toctree}
 ---

@@ -1,6 +1,6 @@
-# Concepts
+# Teaching materials
 
-Something about concepts relevant to industrial ecology.
+Overview of teaching material for LCA, MFA, IO etc.
 
 ```{toctree}
 ---

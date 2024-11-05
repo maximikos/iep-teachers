@@ -1,3 +1,0 @@
-# Sectors
-
-tbd

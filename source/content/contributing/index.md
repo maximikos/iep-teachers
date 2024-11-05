@@ -49,7 +49,7 @@ In order to fix add new content to the documentation by yourself, follow the usu
 
 1. Use the `✏️ Edit on GitHub` button on the top right of the page to open the corresponding file in the GitHub repository. This shows you which file you need to edit.
 2. Edit the file in your fork of the repository. Finally, create a pull request.
-3. As soon as a member of the Brightway developer community has merged your pull request, the changes will be visible on the IEP website.
+3. As soon as a member of the IEP community has merged your pull request, the changes will be visible on the IEP website.
 
 
 ```{toctree}
